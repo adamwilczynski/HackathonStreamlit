@@ -37,20 +37,20 @@ if goal_pension > 0:
     st.write(get_pension_custom_message(percentile))
 
     range_ = 500
-    pension_ranges = utils.caclulate_pension_ranges_2025(range_)
+    pension_ranges = utils.calculate_pension_ranges_2025(range_)
 
-    df = utils.caclulate_pension_ranges_2025(range_)
+    df = utils.calculate_pension_ranges_2025(range_)
     df['color'] = df['lower_bound'].apply(lambda x: 'emerytura mniejsza bądź równa' if goal_pension >= x else 'emerytura większa')
 
     st.header("Procent osób z emeryturą równą, bądź niższą")
     fig = px.bar(
         df,
         x='range',
-        y='percent_cumsum',
+        y='percentage_cumsum',
         color='color',
         color_discrete_map={'emerytura większa': '#f05e5e', 'emerytura mniejsza bądź równa': '#00993f'},
         labels={
-            "percent_cumsum": "",
+            "percentage_cumsum": "",
             "range": "Zakres"
         },
     )
