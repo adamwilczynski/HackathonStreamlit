@@ -1,3 +1,5 @@
+import random
+
 import pandas as pd
 import functools
 
@@ -58,4 +60,14 @@ def pension_to_percentile(pension):
     return min(
         df_value,
         100
-    )
+        )
+
+@functools.cache
+def read_interesting_facts() -> list[str]:
+    with open("./data/interesting_facts.txt", encoding="utf8") as f:
+        interesting_facts = [line[:(line.index("#") if "#" in line else None)].strip() for line in f.read().split("\n")]
+        return interesting_facts
+
+
+def get_random_interesting_fact() -> str:
+    return random.choice(read_interesting_facts())
