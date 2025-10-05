@@ -16,7 +16,7 @@ st.header("Analiza podstawowa")
 st.subheader(
     "Ile faktycznie dostaniesz na emeryturze? "
     "Nie zgaduj – oblicz to w 2 minuty. "
-    "Podaj kilka podstawowych informajci i zobacz, czy będzie Cię stać na spokojne życie po 60-tce."
+    "Podaj kilka podstawowych informacji i zobacz, czy będzie Cię stać na spokojne życie po 60-tce."
 )
 
 goal_pension = st.number_input(
