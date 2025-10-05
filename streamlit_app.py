@@ -9,6 +9,8 @@ st.set_page_config(
     page_icon="🧓",
 )
 
+st.title("To tylko pierwotna wersja prototypu. To nie jest finalna wersja naszej aplikacji!")
+
 st.title("👵 Symulator emerytalny 👴")
 
 st.header("Analiza podstawowa")
